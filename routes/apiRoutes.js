@@ -1,13 +1,24 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all packages
-  app.get("/api/packages", function(req, res) {
-    db.Example.findAll({}).then(function(dbpackages) {
-      res.json(dbpackages);
+  // Getting DB API info
+  app.get("/api/customer_accounts", function(req, res) {
+    db.customer_accounts.findAll({}).then(function(dbCustomer) {
+      res.json(dbCustomer);
     });
   });
-  app.get("/api/packages/:id", function(req, res) {
+  app.get("/api/travel_packages", function(req, res) {
+    db.travel_packages.findAll({}).then(function(dbPackages) {
+      res.json(dbPackages);
+    });
+  });
+  app.get("/api/custom_packages", function(req, res) {
+    db.customPackages.findAll({}).then(function(dbCustom) {
+      res.json(dbCustom);
+    });
+  });
+  // Getting API info for a selected customer
+  app.get("/api/customers/:id", function(req, res) {
     db.Example.findById(req.params.id).then(function(dbpackages) {
       res.json(dbpackages);
     });
@@ -22,21 +33,10 @@ module.exports = function(app) {
 
   // Delete an example by id
   app.delete("/api/packages/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
+    db.Example.destroy({ where: { id: req.params.id } }).then(function(
+      dbExample
+    ) {
       res.json(dbExample);
-    });
-  });
-
-  // start of customer api routes
-
-  app.get("/api/customers", function(req, res) {
-    db.Example.findAll({}).then(function(dbpackages) {
-      res.json(dbpackages);
-    });
-  });
-  app.get("/api/customers/:id", function(req, res) {
-    db.Example.findById(req.params.id).then(function(dbpackages) {
-      res.json(dbpackages);
     });
   });
 
@@ -48,8 +48,11 @@ module.exports = function(app) {
   });
 
   // Delete an example by id
+
   app.delete("/api/customers/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
+    db.Example.destroy({ where: { id: req.params.id } }).then(function(
+      dbExample
+    ) {
       res.json(dbExample);
     });
   });
