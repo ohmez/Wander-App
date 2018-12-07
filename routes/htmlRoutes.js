@@ -3,16 +3,16 @@ var path = require("path");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../html5up-spectral/index.html"));
-    // db.Example.findAll({}).then(function(dbExamples) {
-    //   res.render("index", {
-    //     msg: "Welcome!",
-    //     examples: dbExamples
-    //   });
-    // });
+    // res.sendFile(path.join(__dirname, "../html5up-spectral/index.html"));
+    res.render("index", {
+      layout: "home"
+    });
   });
   app.get("/packages", function(req, res) {
-    res.sendFile(path.join(__dirname, "../html5up-spectral/packages.html"));
+    // res.sendFile(path.join(__dirname, "../html5up-spectral/packages.html"));
+    res.render("index", {
+      layout: "main"
+    });
   });
   app.get("/booking", function(req, res) {
     res.sendFile(path.join(__dirname, "../html5up-spectral/booking.html"));
