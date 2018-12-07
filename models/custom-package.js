@@ -4,8 +4,22 @@ module.exports = function(sequelize, DataTypes) {
     {
       location: DataTypes.STRING,
       flight: DataTypes.STRING,
-      dateLeaving: DataTypes.DATE,
-      dateReturning: DataTypes.DATE,
+      dateLeaving: {
+        type: DataTypes.DATEONLY,
+        validate: {
+          isDate: true,
+          len: [6, 12],
+          notEmpty: true
+        }
+      },
+      dateReturning: {
+        type: DataTypes.DATEONLY,
+        validate: {
+          isDate: true,
+          len: [6, 12],
+          notEmpty: true
+        }
+      },
       hotel: DataTypes.STRING,
       carRental: DataTypes.STRING,
       foodCredit: DataTypes.INTEGER,
