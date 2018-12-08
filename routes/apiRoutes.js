@@ -32,9 +32,17 @@ module.exports = function(app) {
   });
 
   app.post("/signup/create", function(req, res) {
-    db.customer_accounts.create(req.body).then(function() {
-      res.redirect("/signup");
-    });
+    db.customer_accounts.findAll({where:{email:req.body.email}}).then((results) => {
+      if(results.length === 0) {
+        // create account
+          db.customer_accounts.create(req.body).then(function(results) {
+            console.log(results);
+            res.redirect("/");
+          });
+      } else {
+        res.alert("that email's already in use, please login or use a new email");
+      }
+    })
   });
   app.post("/packages/custom-package/create", function(req, res) {
     db.custom_packages.create(req.body).then(function() {
