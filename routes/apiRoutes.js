@@ -13,7 +13,7 @@ module.exports = function(app) {
     });
   });
   app.get("/api/custom_packages", function(req, res) {
-    db.customPackages.findAll({}).then(function(dbCustom) {
+    db.custom_packages.findAll({}).then(function(dbCustom) {
       res.json(dbCustom);
     });
   });
@@ -29,6 +29,23 @@ module.exports = function(app) {
     db.Example.create(req.body).then(function(dbExample) {
       res.json(dbExample);
     });
+  });
+
+  app.post("/signup/create", function(req, res) {
+    console.log(req.body);
+    db.customer_accounts.create(req.body).then(function(dbCustomer) {
+      console.log(dbCustomer);
+      res.json(dbCustomer);
+    });
+    res.redirect("/signup");
+  });
+  app.post("/packages/custom-package/create", function(req, res) {
+    console.log(req.body);
+    db.custom_packages.create(req.body).then(function(dbCustomer) {
+      console.log(dbCustomer);
+      res.json(dbCustomer);
+    });
+    res.redirect("/packages/custom-package");
   });
 
   // Delete an example by id

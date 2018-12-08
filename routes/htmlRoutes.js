@@ -14,8 +14,16 @@ module.exports = function(app) {
       layout: "main"
     });
   });
+  app.get("/packages/custom-package", function(req, res) {
+    // res.sendFile(path.join(__dirname, "../html5up-spectral/packages.html"));
+    res.render("custompackage", { layout: "main" });
+  });
   app.get("/booking", function(req, res) {
     res.sendFile(path.join(__dirname, "../html5up-spectral/booking.html"));
+  });
+
+  app.get("/signup", function(req, res) {
+    res.render("customersignup", { layout: "main" });
   });
 
   // Load example page and pass in an example by id
