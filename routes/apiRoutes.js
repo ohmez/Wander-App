@@ -32,20 +32,14 @@ module.exports = function(app) {
   });
 
   app.post("/signup/create", function(req, res) {
-    console.log(req.body);
-    db.customer_accounts.create(req.body).then(function(dbCustomer) {
-      console.log(dbCustomer);
-      res.json(dbCustomer);
+    db.customer_accounts.create(req.body).then(function() {
+      res.redirect("/signup");
     });
-    res.redirect("/signup");
   });
   app.post("/packages/custom-package/create", function(req, res) {
-    console.log(req.body);
-    db.custom_packages.create(req.body).then(function(dbCustomer) {
-      console.log(dbCustomer);
-      res.json(dbCustomer);
+    db.custom_packages.create(req.body).then(function() {
+      res.redirect("/packages/custom-package");
     });
-    res.redirect("/packages/custom-package");
   });
 
   // Delete an example by id
