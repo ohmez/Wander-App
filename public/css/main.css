@@ -86,8 +86,9 @@ input, select, textarea {
 	margin: -2.5em 0 0 -2.5em;
 }
 section.tiles {
-    margin: 25px 0 45px;
+    margin: 25px 45px;
 }
+
 	.tiles article {
 		-moz-transition: -moz-transform 0.5s ease, opacity 0.5s ease;
 		-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
