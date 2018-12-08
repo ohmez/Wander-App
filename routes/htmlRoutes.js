@@ -10,7 +10,7 @@ module.exports = function(app) {
   });
   app.get("/packages", function(req, res) {
     // res.sendFile(path.join(__dirname, "../html5up-spectral/packages.html"));
-    res.render("index", {
+    res.render("packages", {
       layout: "main"
     });
   });
