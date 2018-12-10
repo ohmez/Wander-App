@@ -6,7 +6,7 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     res.render("index", {
       layout: "home",
-      title: "Packages"
+      title: "Wander"
     });
   });
   // Load Prebuilt Packages Page
@@ -37,28 +37,25 @@ module.exports = function(app) {
       title: "Restaurant Finder"
     });
   });
+  app.get("/booking", function(req, res) {
+      db.travel_packages.findAll({}).then((results) => {
+        var packages = {
+          package: results,
+          title: "Booking Options"
+        };
+        res.render("bookings", packages);
+      });
+  });
   // Load Dynamic Packages Page - need a /:category in the url and update where statment.
   app.get("/booking/:category", function(req, res) {
-    db.travel_packages.findAll({}).then((results) => {
+    db.travel_packages.findAll({where: {
+      category: req.params.category
+    }}).then((results) => {
       var packages = {
         package: results,
         title: "Booking Options"
       };
       res.render("bookings",packages);
-    });
-  });
-  // Load Individual Package Info Page
-  app.get("/booking/comfort-package", function(req, res) {
-    res.render("comfort-package", {
-      layout: "main",
-      title: "Comfort"
-    });
-  });
-  // Load Individual Package Info Page
-  app.get("/booking/bliss-package", function(req, res) {
-    res.render("bliss-package", {
-      layout: "main",
-      title: "Bliss"
     });
   });
   // Load Account Sign Up Page
