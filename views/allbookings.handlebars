@@ -1,0 +1,31 @@
+<!-- Main -->
+<article id="main">
+    <header>
+        <h2>Booking</h2>
+    </header>
+</article>
+
+<section class="wrapper style5">
+    <div class="inner">
+        {{#each category}}
+        <section>
+           <h3 class="text-center">{{name}} Packages</h3><hr>
+            <div class="row text-center">
+                {{>packages/packages}}
+            </div>
+        {{/each}}
+        <hr>
+            <div class="row">
+                <section>
+                    <h4>Don't Like Our Choices? Create Your Own!</h4>
+                    <br>
+                    <ul class="actions">
+                        <li>
+                            <a href="/booking/custom-package" class="button primary" id="thriftyCustomSubmitBtn">Customize</a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </div>
+</section>
