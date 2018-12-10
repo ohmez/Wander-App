@@ -38,7 +38,7 @@ module.exports = function(app) {
     });
   });
   // Load Dynamic Packages Page - need a /:category in the url and update where statment.
-  app.get("/booking", function(req, res) {
+  app.get("/booking/:category", function(req, res) {
     db.travel_packages.findAll({}).then((results) => {
       var packages = {
         package: results,
@@ -46,10 +46,6 @@ module.exports = function(app) {
       };
       res.render("bookings",packages);
     });
-    // res.render("thrifty-package", {
-    //   layout: "main",
-    //   title: "Thirfy"
-    // });
   });
   // Load Individual Package Info Page
   app.get("/booking/comfort-package", function(req, res) {
