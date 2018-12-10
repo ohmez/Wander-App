@@ -30,6 +30,13 @@ module.exports = function(app) {
       title: "Thank You"
     });
   });
+  // Load Custom Page Form Page
+  app.get("/booking/thank-you/restaurant-finder", function(req, res) {
+    res.render("restaurant", {
+      layout: "main",
+      title: "Restaurant Finder"
+    });
+  });
   // Load Dynamic Packages Page - need a /:category in the url and update where statment.
   app.get("/booking", function(req, res) {
     db.travel_packages.findAll({}).then((results) => {

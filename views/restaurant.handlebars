@@ -1,0 +1,51 @@
+<article id="main">
+    <header>
+        <h2>Generic Page</h2>
+        <p>Sign Up</p>
+    </header>
+</article>
+
+<section class="wrapper style5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="/images/zomato-logo.png" class="d-block mx-auto" alt="">
+                <div class="feedback alert alert-danger text-center text-capitalize">please enter city</div>
+                <form id="searchForm" class="my-4">
+                    <!-- form group -->
+                    <div class="form-group my-3">
+                        <select class="custom-select text-capitalize" id="searchCategory">
+
+
+                        </select>
+                    </div>
+                    <!-- end of form group -->
+
+                    <!-- input group -->
+                    <div class="input-group">
+                        <input type="text" class="form-control text-capitalize" id="searchCity" placeholder="enter city....">
+                        <div class="input-group-append">
+                            <button type="submit" class="button primary text-capitalize">search</button>
+                        </div>
+                    </div>
+                    <!-- input group -->
+                </form>
+                <img src="/images/loader.gif" class="loader" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- restaurant section -->
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row" id="restaurant-list">
+            </div>
+    </section>
+</section>
+
+<!-- jquery -->
+<script src="/js/jquery-3.3.1.min.js"></script>
+<!-- bootstrap js -->
+<script src="/js/bootstrap.bundle.min.js"></script>
+<!-- script js -->
+<script src="/js/app.js"></script>
