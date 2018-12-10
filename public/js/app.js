@@ -31,7 +31,7 @@ class ZOMATO {
         }
         // search restaurant
         const restaurantURL = `https://developers.zomato.com/api/v2.1/search?entity_id=${cityID}&entity_type=city
-        &category=${categoryID}&sort=rating`;
+        &category=${categoryID}&sort=rating&count=10`;
         const restaurantInfo = await fetch(restaurantURL, this.header);
         const restaurantJSON = await restaurantInfo.json();
         const restaurants = await restaurantJSON.restaurants;
