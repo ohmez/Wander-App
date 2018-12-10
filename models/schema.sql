@@ -52,7 +52,8 @@ INSERT INTO customer_accounts (firstName, middleName, lastName, birthday, phoneN
 INSERT INTO travel_packages (category, location, flight, dateLeaving, dateReturning, hotel, carRental, foodCredit, activities) VALUES 
 ("Thrifty", "Switzerland", "First", "2018-12-25", "2019-01-02", "ARIA Sky Suites", "Convertible", 100, "something expensive"),
 ("Comfort", "Canada", "Business", "2019-01-18", "2019-01-23", "The Ritz-Carlton, Kapalua", "Mid-size", 50, "something cool"),
-("Bliss", "Germany", "Economy", "2018-01-15", "2019-01-20", "Blackberry Farm", "Economy", 10, "something free");
+("Bliss", "Germany", "Economy", "2018-01-15", "2019-01-20", "Blackberry Farm", "Economy", 10, "something free"),
+("Bliss", "Canada", "Business", "2019-01-18", "2019-01-23", "The Ritz-Carlton, Kapalua", "Mid-size", 50, "something cool");
 
 INSERT INTO custom_packages (location, flight, dateLeaving, dateReturning, hotel, carRental, foodCredit, activities) VALUES 
 ("United Kingdom", "First", "2019-02-15", "2019-02-20", "Hilton", "Convertible", 100, "something expensive"),
