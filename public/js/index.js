@@ -27,6 +27,13 @@ var API = {
       url: "api/examples/" + id,
       type: "DELETE"
     });
+  },
+  error: function(error) {
+    if (error.responseText === "showAlert") {
+      alert(
+        "Email is already in use! Please login or use a different email to sign up!"
+      );
+    }
   }
 };
 

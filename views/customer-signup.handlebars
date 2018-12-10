@@ -1,0 +1,53 @@
+<article id="main">
+    <header>
+        <h2>Generic Page</h2>
+        <p>Sign Up</p>
+    </header>
+</article>
+
+<section class="wrapper style5">
+    <div class="inner">
+        <form method="POST" action="/signup/create">
+            <div class="row gtr-uniform">
+                <div class="col-4 col-12-xsmall">
+                    <input type="text" name="firstName" id="first-name" value="" placeholder="First Name" />
+                </div>
+                <div class="col-4 col-12-xsmall">
+                    <input type="text" name="middleName" id="middle-name" value="" placeholder="Middle Initial" />
+                </div>
+                <div class="col-4 col-12-xsmall">
+                    <input type="text" name="lastName" id="last-name" value="" placeholder="Last Name" />
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <input type='text' name="birthday" id="birthday" class='datepicker-here' data-language='en' placeholder="Birthday" />
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <input type="text" name="phoneNumber" id="phone-number" value="" placeholder="Phone Number" />
+                </div>
+                <div class="col-12   col-12-xsmall">
+                    <input type="text" name="address" id="address" value="" placeholder="Address" />
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <input type="email" name="email" id="email" value="" placeholder="Email" />
+                </div>
+                <div class="col-6 col-12-xsmall">
+                    <input type="password" name="password" id="password" value="" placeholder="Password" />
+                </div>
+                <div class="col-12">
+                    <ul class="actions">
+                        <li>
+                            <input type="submit" value="Sign Up" class="primary" />
+                        </li>
+                        <li>
+                            <input type="reset" value="Reset" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</section>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
