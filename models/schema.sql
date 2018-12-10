@@ -19,6 +19,7 @@ CREATE TABLE customer_accounts (
 
 CREATE TABLE travel_packages (
 	id INT NOT NULL AUTO_INCREMENT,
+	category VARCHAR (100), NOT NULL,
 	location VARCHAR (100) NOT NULL,
 	flight VARCHAR (100) NOT NULL,
     dateLeaving DATE NOT NULL,

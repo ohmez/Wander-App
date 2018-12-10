@@ -40,16 +40,16 @@ module.exports = function(app) {
           // create account
           db.customer_accounts.create(req.body).then(function(results) {
             // console.log(results);
-            res.redirect("/");
+            res.redirect("/packages");
           });
         } else {
           res.redirect("*");
         }
       });
   });
-  app.post("/packages/custom-package/create", function(req, res) {
+  app.post("/booking/custom-package/create", function(req, res) {
     db.custom_packages.create(req.body).then(function() {
-      res.redirect("/packages/custom-package");
+      res.redirect("/booking/thank-you");
     });
   });
 
