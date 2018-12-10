@@ -17,15 +17,39 @@ module.exports = function(app) {
     });
   });
   // Load Custom Page Form Page
-  app.get("/packages/custom-package", function(req, res) {
+  app.get("/booking/custom-package", function(req, res) {
     res.render("custom-package", {
       layout: "main",
       title: "Custom Package"
     });
   });
+  // Load Custom Page Form Page
+  app.get("/booking/thank-you", function(req, res) {
+    res.render("thankyou", {
+      layout: "main",
+      title: "Thank You"
+    });
+  });
   // Load Individual Package Info Page
-  app.get("/booking", function(req, res) {
-    res.sendFile(path.join(__dirname, "../html5up-spectral/booking.html"));
+  app.get("/booking/thrifty-package", function(req, res) {
+    res.render("thrifty-package", {
+      layout: "main",
+      title: "Thirfy"
+    });
+  });
+  // Load Individual Package Info Page
+  app.get("/booking/comfort-package", function(req, res) {
+    res.render("comfort-package", {
+      layout: "main",
+      title: "Comfort"
+    });
+  });
+  // Load Individual Package Info Page
+  app.get("/booking/bliss-package", function(req, res) {
+    res.render("bliss-package", {
+      layout: "main",
+      title: "Bliss"
+    });
   });
   // Load Account Sign Up Page
   app.get("/signup", function(req, res) {
