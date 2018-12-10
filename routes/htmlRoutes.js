@@ -30,12 +30,19 @@ module.exports = function(app) {
       title: "Thank You"
     });
   });
-  // Load Individual Package Info Page
-  app.get("/booking/thrifty-package", function(req, res) {
-    res.render("thrifty-package", {
-      layout: "main",
-      title: "Thirfy"
+  // Load Dynamic Packages Page - need a /:category in the url and update where statment.
+  app.get("/booking", function(req, res) {
+    db.travel_packages.findAll({}).then((results) => {
+      var packages = {
+        package: results,
+        title: "Booking Options"
+      };
+      res.render("bookings",packages);
     });
+    // res.render("thrifty-package", {
+    //   layout: "main",
+    //   title: "Thirfy"
+    // });
   });
   // Load Individual Package Info Page
   app.get("/booking/comfort-package", function(req, res) {

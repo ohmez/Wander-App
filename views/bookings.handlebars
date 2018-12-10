@@ -1,0 +1,47 @@
+<!-- Main -->
+<article id="main">
+    <header>
+        <h2>Booking</h2>
+    </header>
+</article>
+
+<section class="wrapper style5">
+    <div class="inner">
+
+        <section>
+            <div class="row">
+            {{#each package}}
+                <div class="col-4 col-12-large">
+                    <h2>{{location}}</h2>
+                    <br>
+                    <p>Flight Type: {{flight}} <br>
+                        Date Leaving: {{dateLeaving}}<br>
+                        Return Date {{dateReturning}}<br>
+                        Hotel:  {{hotel}}<br>
+                        Car Info: {{carRental}}<br>
+                        Food Money: {{foodCredit}}<br>
+                        Activities: {{activities}}<br>
+                    </p>
+                    <section>
+                        <ul class="actions">
+                            <li>
+                                <a href="/booking/thank-you" class="button primary" id="submitBtnThrifty1">Submit</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                {{/each}}
+            <div class="row">
+                <section>
+                    <h4>Don't Like Our Choices? Create Your Own!</h4>
+                    <br>
+                    <ul class="actions">
+                        <li>
+                            <a href="/packages/custom-package" class="button primary" id="thriftyCustomSubmitBtn">Customize</a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </div>
+</section>
