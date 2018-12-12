@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "@devBound1*101*",
+    "password": "password",
     "database": "wanderer_db",
     "host": "localhost",
     "dialect": "mysql"
