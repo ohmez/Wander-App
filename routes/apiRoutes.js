@@ -42,7 +42,7 @@ module.exports = function(app) {
           db.customer_accounts.create(req.body).then(function(results) {
             // // console.log(results);
             // res.redirect("/packages");
-            res.json(results);
+            res.redirect("/sign-up/thank-you");
           });
         } else {
           res.redirect("*");
@@ -51,7 +51,7 @@ module.exports = function(app) {
   });
   app.post("/booking/custom-package/create", function(req, res) {
     db.custom_packages.create(req.body).then(function() {
-      res.redirect("/booking/thank-you");
+      res.redirect("/sign-up");
     });
   });
 
