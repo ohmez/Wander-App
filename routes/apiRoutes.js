@@ -39,9 +39,7 @@ module.exports = function(app) {
         // console.log(results);
         if (results.length === 0) {
           // create account
-          db.customer_accounts.create(req.body).then(function(results) {
-            // console.log(results);
-            res.json(results);
+          db.customer_accounts.create(req.body).then(function() {
             res.redirect("/sign-up/thank-you");
           });
         } else {
