@@ -31,7 +31,7 @@ module.exports = function(app) {
     });
   });
   // Load Custom Page Form Page
-  app.get("/booking/thank-you/restaurant-finder", function(req, res) {
+  app.get("/restaurant-finder", function(req, res) {
     res.render("restaurant", {
       layout: "main",
       title: "Restaurant Finder"
