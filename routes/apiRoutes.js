@@ -32,6 +32,7 @@ module.exports = function(app) {
   });
 
   app.post("/signup/create", function(req, res) {
+    // console.log(res.body);
     db.customer_accounts
       .findAll({ where: { email: req.body.email } })
       .then(function(results) {
@@ -39,8 +40,9 @@ module.exports = function(app) {
         if (results.length === 0) {
           // create account
           db.customer_accounts.create(req.body).then(function(results) {
-            // console.log(results);
-            res.redirect("/packages");
+            // // console.log(results);
+            // res.redirect("/packages");
+            res.json(results);
           });
         } else {
           res.redirect("*");
