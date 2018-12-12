@@ -2414,7 +2414,7 @@ section.tiles {
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
-		display: flex;
+		display: inline-block;
 		cursor: default;
 		list-style: none;
 		margin-left: -1em;
