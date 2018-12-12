@@ -40,8 +40,8 @@ module.exports = function(app) {
         if (results.length === 0) {
           // create account
           db.customer_accounts.create(req.body).then(function(results) {
-            // // console.log(results);
-            // res.redirect("/packages");
+            // console.log(results);
+            res.json(results);
             res.redirect("/sign-up/thank-you");
           });
         } else {
@@ -52,6 +52,30 @@ module.exports = function(app) {
   app.post("/booking/custom-package/create", function(req, res) {
     db.custom_packages.create(req.body).then(function() {
       res.redirect("/sign-up");
+    });
+  });
+
+  // For Testing using Mocha
+  app.post("/signup/test/create", function(req, res) {
+    // console.log(res.body);
+    db.customer_accounts
+      .findAll({ where: { email: req.body.email } })
+      .then(function(results) {
+        // console.log(results);
+        if (results.length === 0) {
+          // create account
+          db.customer_accounts.create(req.body).then(function(results) {
+            // console.log(results);
+            res.json(results);
+          });
+        } else {
+          res.redirect("*");
+        }
+      });
+  });
+  app.post("/booking/test/custom-package/create", function(req, res) {
+    db.custom_packages.create(req.body).then(function(results) {
+      res.json(results);
     });
   });
 
