@@ -4231,3 +4231,10 @@ section.tiles {
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+
+	body.stevethrifty #thriftyCustomSubmitBtn, 
+	body.steveThrifty1 #thriftyCustomSubmitBtn1,
+	body.steveThrifty2 #thriftyCustomSubmitBtn2 {
+		background-color: blue;
+		justify-items: center;
+	}
