@@ -49,6 +49,18 @@ module.exports = function(app) {
         }
       });
   });
+  app.post("/login", (req,res) =>{
+    db.customer_accounts.findAll({where: {email: req.body.email}})
+    .then((results) => {
+      if(results.length === 0) {
+        res.redirec("/../login");
+      } else {
+        if(results[0].dataValues.password === req.body.password) {
+          res.redirec("/../booking");
+        }
+      }
+    })
+  })
   app.post("/booking/custom-package/create", function(req, res) {
     db.custom_packages.create(req.body).then(function() {
       res.redirect("/booking/thank-you");
