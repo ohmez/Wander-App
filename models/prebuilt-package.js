@@ -2,6 +2,7 @@ module.exports = function(sequelize, DataTypes) {
   var travelPackages = sequelize.define(
     "travel_packages",
     {
+      category: DataTypes.STRING,
       location: DataTypes.STRING,
       flight: DataTypes.STRING,
       dateLeaving: DataTypes.DATE,

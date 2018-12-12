@@ -33,7 +33,6 @@ module.exports = function(sequelize, DataTypes) {
       phoneNumber: {
         type: DataTypes.STRING,
         validate: {
-          isNumeric: true,
           len: [9, 14],
           notEmpty: true
         }

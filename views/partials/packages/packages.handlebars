@@ -1,0 +1,21 @@
+ {{#each packages}}
+ <div class="col-4 col-12-large">
+                    <h2>{{location}}</h2>
+                    <br>
+                    <p>Flight Type: {{flight}} <br>
+                        Date Leaving: {{dateLeaving}}<br>
+                        Return Date {{dateReturning}}<br>
+                        Hotel:  {{hotel}}<br>
+                        Car Info: {{carRental}}<br>
+                        Food Money: {{foodCredit}}<br>
+                        Activities: {{activities}}<br>
+                    </p>
+                    <section>
+                        <ul class="actions">
+                            <li>
+                                <a href="/../booking/thank-you" class="button primary" id="submitBtn{{category}}{{id}}">Submit</a>
+                            </li>
+                        </ul>
+                    </section>
+</div>
+ {{/each}}

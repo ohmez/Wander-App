@@ -32,20 +32,25 @@ module.exports = function(app) {
   });
 
   app.post("/signup/create", function(req, res) {
-    console.log(req.body);
-    db.customer_accounts.create(req.body).then(function(dbCustomer) {
-      console.log(dbCustomer);
-      res.json(dbCustomer);
-    });
-    res.redirect("/signup");
+    db.customer_accounts
+      .findAll({ where: { email: req.body.email } })
+      .then(function(results) {
+        // console.log(results);
+        if (results.length === 0) {
+          // create account
+          db.customer_accounts.create(req.body).then(function(results) {
+            // console.log(results);
+            res.redirect("/packages");
+          });
+        } else {
+          res.redirect("*");
+        }
+      });
   });
-  app.post("/packages/custom-package/create", function(req, res) {
-    console.log(req.body);
-    db.custom_packages.create(req.body).then(function(dbCustomer) {
-      console.log(dbCustomer);
-      res.json(dbCustomer);
+  app.post("/booking/custom-package/create", function(req, res) {
+    db.custom_packages.create(req.body).then(function() {
+      res.redirect("/booking/thank-you");
     });
-    res.redirect("/packages/custom-package");
   });
 
   // Delete an example by id
