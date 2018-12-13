@@ -82,6 +82,12 @@ module.exports = function(app) {
       title: "Sign Up"
     });
   });
+  app.get("/login", function(req, res) {
+    res.render("login", {
+      layout: "main",
+      title: "Welcome Back Wanderer"
+    });
+  });
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {

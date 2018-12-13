@@ -10,7 +10,7 @@ CREATE TABLE customer_accounts (
     middleName VARCHAR (100) NOT NULL,
     lastName VARCHAR (100) NOT NULL,
     birthday VARCHAR (320) NOT NULL,
-	phoneNumber INT NOT NULL,
+	phoneNumber VARCHAR NOT NULL,
 	address VARCHAR (320) NOT NULL,
 	email VARCHAR (320) NOT NULL,
 	password VARCHAR (320) NOT NULL,

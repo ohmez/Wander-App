@@ -39,14 +39,28 @@ module.exports = function(app) {
         // console.log(results);
         if (results.length === 0) {
           // create account
-          db.customer_accounts.create(req.body).then(function() {
-            res.redirect("/sign-up/thank-you");
+          db.customer_accounts.create(req.body).then(function(results) {
+            // // console.log(results);
+            // res.redirect("/packages");
+            res.redirect("/../booking");
           });
         } else {
-          res.redirect("*");
+          res.redirect("/../login");
         }
       });
   });
+  app.post("/login", (req,res) =>{
+    db.customer_accounts.findAll({where: {email: req.body.email}})
+    .then((results) => {
+      if(results.length === 0) {
+        res.redirect("/../login");
+      } else {
+        if(results[0].dataValues.password === req.body.password) {
+          res.redirect("/../booking");
+        }
+      }
+    })
+  })
   app.post("/booking/custom-package/create", function(req, res) {
     db.custom_packages.create(req.body).then(function() {
       res.redirect("/sign-up");
