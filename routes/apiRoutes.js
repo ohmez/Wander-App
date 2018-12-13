@@ -45,7 +45,7 @@ module.exports = function(app) {
             res.redirect("/../booking");
           });
         } else {
-          res.redirect("*");
+          res.redirect("/../login");
         }
       });
   });
