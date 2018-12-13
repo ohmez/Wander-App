@@ -2565,8 +2565,11 @@ section.tiles {
 
 /* Table */
 
+	.tableSetup{
+		width: 30%;
+		text-align: center;
+	}
 	.table-wrapper {
-		-webkit-overflow-scrolling: touch;
 		overflow-x: auto;
 	}
 
