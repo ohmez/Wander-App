@@ -24,7 +24,7 @@ module.exports = function(app) {
     });
   });
   // Load Custom Page Form Page
-  app.get("/booking/thank-you", function(req, res) {
+  app.get("/sign-up/thank-you", function(req, res) {
     res.render("thankyou", {
       layout: "main",
       title: "Thank You"
@@ -75,8 +75,24 @@ module.exports = function(app) {
       res.render("bookings",packages);
     });
   });
+  // Load Dynamic Packages Page - need a /:category in the url and update where statment.
+  app.get("/customer-account/:id", function(req, res) {
+    db.customer_accounts.findAll({
+      where: {
+        id: req.params.id
+      }
+  }).then((results) => {
+      console.log("results: " +results)
+      var customerAccountPage = {
+        layout: "main",
+        title: "Account Information",
+        id: results
+      }
+      res.render("customer-account", customerAccountPage);
+    });
+  });
   // Load Account Sign Up Page
-  app.get("/signup", function(req, res) {
+  app.get("/sign-up", function(req, res) {
     res.render("customer-signup", {
       layout: "main",
       title: "Sign Up"
