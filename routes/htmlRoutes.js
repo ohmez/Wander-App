@@ -62,6 +62,9 @@ module.exports = function(app) {
   });
   // Load Dynamic Packages Page - need a /:category in the url and update where statment.
   app.get("/booking/:category", function(req, res) {
+    var id = req.headers.referer.split('?',2).splice(1,1)[0].split('=',2).splice(1,1)[0];
+    // test = test[0].split('=',2).splice(1,1);
+    // console.log(test);
     db.travel_packages.findAll({
       where: {
       category: req.params.category
@@ -70,7 +73,8 @@ module.exports = function(app) {
       var packages = {
         package: results,
         title: "Booking Options",
-        name: req.params.category
+        name: req.params.category,
+        userID: id
       };
       res.render("bookings",packages);
     });
