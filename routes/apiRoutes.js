@@ -42,7 +42,7 @@ module.exports = function(app) {
           db.customer_accounts.create(req.body).then(function(results) {
             // // console.log(results);
             // res.redirect("/packages");
-            res.redirect("/../booking");
+            res.redirect("/../packages");
           });
         } else {
           res.redirect("/../login");
@@ -50,13 +50,15 @@ module.exports = function(app) {
       });
   });
   app.post("/login", (req,res) =>{
+    // console.log(req);
     db.customer_accounts.findAll({where: {email: req.body.email}})
     .then((results) => {
       if(results.length === 0) {
         res.redirect("/../login");
       } else {
         if(results[0].dataValues.password === req.body.password) {
-          res.redirect("/../booking");
+          var id = results[0].dataValues.id;
+          res.redirect("/../packages?id="+id);
         }
       }
     })

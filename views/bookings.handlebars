@@ -25,7 +25,11 @@
                     <section>
                         <ul class="actions">
                             <li>
-                                <a href="/sign-up" class="button primary" id="submitBtnThrifty1">Submit</a>
+                                {{#if ../userID}}
+                                <a href="/sign-up/thank-you?packageID={{id}}&category={{../name}}&userID={{../userID}}" class="button primary" id="submitBtn{{../name}}{{id}}">Submit</a>
+                                {{else}}
+                                <a href="/sign-up" class="button primary" id="submitBtn{{../name}}{{id}}">Sign-Up</a>
+                                {{/if}}
                             </li>
                         </ul>
                     </section>
@@ -38,7 +42,7 @@
                     <br>
                     <ul class="actions">
                         <li>
-                            <a href="/booking/custom-package" class="button primary" id="thriftyCustomSubmitBtn">Customize</a>
+                            <a href="/booking/custom-package?userID={{userID}}" class="button primary" id="thriftyCustomSubmitBtn">Customize</a>
                         </li>
                     </ul>
                 </section>
