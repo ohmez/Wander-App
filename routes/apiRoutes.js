@@ -40,9 +40,9 @@ module.exports = function(app) {
         if (results.length === 0) {
           // create account
           db.customer_accounts.create(req.body).then(function(results) {
-            // // console.log(results);
+            var id= results.dataValues.id;
             // res.redirect("/packages");
-            res.redirect("/../packages");
+            res.redirect("/../packages?id="+id);
           });
         } else {
           res.redirect("/../login");
