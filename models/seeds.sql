@@ -6,15 +6,15 @@ INSERT INTO customer_accounts (firstName, middleName, lastName, birthday, phoneN
 ("Colin", "L", "Reck", 01/04/1991, 714-578-9292, "4276 Cimmaron Road Fullerton, CA 92632", "ColinLReck@test.com", "789");
 
 INSERT INTO travel_packages (category, location, flight, dateLeaving, dateReturning, hotel, carRental, foodCredit, activities) VALUES 
-("Thrifty", "Switzerland", "First", "2018-12-25", "2019-01-02", "ARIA Sky Suites", "Convertible", 100, "Something Expensive"),
-("Comfort", "Canada", "Business", "2019-01-18", "2019-01-23", "The Ritz-Carlton, Kapalua", "Mid-size", 50, "Something Cool"),
-("Bliss", "Germany", "Economy", "2018-01-15", "2019-01-20", "Blackberry Farm", "Economy", 10, "Something Free"),
-("Bliss", "Canada", "Business", "2019-01-18", "2019-01-23", "The Ritz-Carlton, Kapalua", "Mid-size", 50, "Something cool"),
-("Thrifty", "Mexico", "Economy", "2019-01-20", "2019-01-25", "The Resort at Pedregal, Pedregal", "Large", 30, "Something cool"),
-("Comfort", "United Kingdom", "Business", "2019-01-28", "2019-02-05", "Sofitel Heathrow, London", "Large", 50, "Something Jolley"),
-("Bliss", "France", "First", "2019-02-01", "2019-02-12", "Auberge des Voyageurs, Châtelus-Malvaleix", "Small", 20, "French Things"),
-("Thrifty", "Guatemala", "Economy", "2019-02-21", "2019-02-28", "Hotel Casa Veranda Guatemala, Guatemala City", "Mini", 40, "Something Cool"),
-("Comfort", "France", "Grand-Hôtel du Cap-Ferrat, A Four Seasons Hotel", "2019-03-01", "2019-03-21", "Saint-Jean-Cap-Ferrat", "Convertible", 100, "Expensive French Things");
+("Thrifty", "Switzerland", "Economy", "2018-12-25", "2019-01-02", "Balmers Hostel", "Bus Pass", 20, "Grindelwald Hike"),
+("Thrifty", "Spain", "Economy", "2019-08-15", "2019-08-25", "Hostel One Paralelo", "Bus Pass", 40, "Saunter up La Rambla"),
+("Thrifty", "Scotland", "Economy", "2019-01-02", "2019-01-10", "Royal Mile Backpackers", "Bus Pass", 20, "Highlands Hike"),
+("Comfort", "Canada", "Business", "2019-01-18", "2019-01-23", "Le Westin Montreal", "Mid-size", 50, "Montreal Walking Tour"),
+("Comfort", "France", "Business", "2019-02-18", "2019-02-23", "Paris Marriott Champs Elysees", "Metro Card", 50, "Paris Food Tour"),
+("Comfort", "Japan", "Business", "2019-01-02", "2019-01-08", "Little Tokyo Hotel", "Metro Card", 50, "Sushi Making"),
+("Bliss", "Germany", "First", "2019-09-15", "2019-09-30", "Blackberry Farm", "Chauffeur", 110, "Oktoberfest"),
+("Bliss", "Canada", "First", "2019-01-18", "2019-01-23", "Hotel Place d'Armes", "Chauffeur", 150, "Food Tour"),
+("Bliss", "New York", "First", "2019-01-18", "2019-01-23", "The Ritz-Carlton", "Chauffeur", 250, "Russian Tea House");
 
 INSERT INTO custom_packages (location, flight, dateLeaving, dateReturning, hotel, carRental, foodCredit, activities) VALUES 
 ("United Kingdom", "First", "2019-02-15", "2019-02-20", "Hilton", "Convertible", 100, "something expensive"),
