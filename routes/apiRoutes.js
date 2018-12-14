@@ -56,7 +56,8 @@ module.exports = function(app) {
         res.redirect("/../login");
       } else {
         if(results[0].dataValues.password === req.body.password) {
-          res.redirect("/../booking");
+          var id = results[0].dataValues.id;
+          res.redirect("/../booking?id="+id);
         }
       }
     })

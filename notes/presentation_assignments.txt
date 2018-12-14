@@ -1,0 +1,6 @@
+presentation
+Sarah - what problem does your app focus on.
+Stephen - how does your app solve this problem at a high level.
+Keagan - what steps did you take to build the app.
+Mark - show app running, how does this solve problem that began the story.
+	 + whats next.. 
