@@ -3,6 +3,10 @@ var db = require("../models");
 module.exports = function(app) {
   // Getting DB API info
   app.get("/api/customer_accounts", function(req, res) {
+    // var query = {};
+    // if (req.query.packageID) {
+    //   query.PackageId = req.query.packageID;
+    // }
     db.customer_accounts.findAll({}).then(function(dbCustomer) {
       res.json(dbCustomer);
     });
