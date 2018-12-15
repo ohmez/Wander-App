@@ -2,18 +2,23 @@ var db = require("../models");
 var path = require("path");
 
 module.exports = function(app) {
-  // Load Index Page
+  // Load Home Page
   app.get("/", function(req, res) {
-    res.render("index", {
+    res.render("home", {
       layout: "home",
       title: "Wander"
     });
   });
   // Load Prebuilt Packages Page
   app.get("/packages", function(req, res) {
+    var id = 0;
+    if(req.url.includes('?')) {
+      id = req.url.split('?',2).splice(1,1)[0].split('=',2).splice(1,1)[0];
+    }
     res.render("packages", {
       layout: "main",
-      title: "Packages"
+      title: "Packages",
+      userID: id
     });
   });
   // Load Custom Page Form Page

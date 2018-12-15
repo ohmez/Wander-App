@@ -17,20 +17,6 @@ module.exports = function(app) {
       res.json(dbCustom);
     });
   });
-  // Getting API info for a selected customer
-  app.get("/api/customers/:id", function(req, res) {
-    db.Example.findById(req.params.id).then(function(dbpackages) {
-      res.json(dbpackages);
-    });
-  });
-
-  // Create a new example
-  app.post("/api/packages", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
-
   app.post("/signup/create", function(req, res) {
     // console.log(res.body);
     db.customer_accounts

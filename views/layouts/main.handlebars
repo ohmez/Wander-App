@@ -36,6 +36,21 @@
 						</a>
 						<div id="menu">
 							<ul>
+								  {{#if userID}}
+								<li>
+									<a href="/../?id={{userID}}">Home</a>
+								</li>
+								<li>
+									<a href="/../packages?id={{userID}}">Packages</a>
+								</li>
+								<li>
+									<a href="/restaurant-finder?id={{userID}}">Restaurant Finder</a>
+								</li>
+
+								<li>
+									<a href="/../customer-account/{{userID}}">Account Info</a>
+								</li>
+								     {{else}}
 								<li>
 									<a href="/../">Home</a>
 								</li>
@@ -45,13 +60,13 @@
 								<li>
 									<a href="/restaurant-finder">Restaurant Finder</a>
 								</li>
-
 								<li>
 									<a href="/../login">Log In</a>
 								</li>
 								<li>
 									<a href="/../sign-up">Sign Up</a>
 								</li>
+									  {{/if}}
 							</ul>
 						</div>
 					</li>
