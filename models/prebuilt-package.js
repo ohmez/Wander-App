@@ -16,10 +16,10 @@ module.exports = function(sequelize, DataTypes) {
       timestamps: false
     }
   );
-  travelPackages.associate = function(models) {
-    travelPackages.hasMany(models.customerData, {
-      onDelete: "cascade"
-    });
-  };
+  // travelPackages.associate = function(models) {
+  //   travelPackages.hasMany(models.customerData, {
+  //     onDelete: "cascade"
+  //   });
+  // };
   return travelPackages;
 };
