@@ -78,30 +78,4 @@ module.exports = function(app) {
       res.json(results);
     });
   });
-
-  // Delete an example by id
-  app.delete("/api/packages/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.json(dbExample);
-    });
-  });
-
-  // Create a new example
-  app.post("/api/customers", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
-
-  // Delete an example by id
-
-  app.delete("/api/customers/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.json(dbExample);
-    });
-  });
 };
