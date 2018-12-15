@@ -3,12 +3,12 @@ var db = require("../models");
 module.exports = function(app) {
   // Getting DB API info
   app.get("/api/customer_accounts", function(req, res) {
-    db.customer_accounts.findAll({}).then(function(dbCustomer) {
+    db.customer_accounts.findAll({include: [db.travelPackages]}).then(function(dbCustomer) {
       res.json(dbCustomer);
     });
   });
   app.get("/api/travel_packages", function(req, res) {
-    db.travel_packages.findAll({}).then(function(dbPackages) {
+    db.travel_packages.findAll({include: [db.customerData]}).then(function(dbPackages) {
       res.json(dbPackages);
     });
   });

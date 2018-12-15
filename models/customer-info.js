@@ -63,5 +63,12 @@ module.exports = function(sequelize, DataTypes) {
       timestamps: false
     }
   );
+  customerData.associate = function(models) {
+    customerData.belongsTo(models.travelPackages, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return customerData;
 };
