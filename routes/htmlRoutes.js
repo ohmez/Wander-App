@@ -2,18 +2,23 @@ var db = require("../models");
 var path = require("path");
 
 module.exports = function(app) {
-  // Load Index Page
+  // Load Home Page
   app.get("/", function(req, res) {
-    res.render("index", {
+    res.render("home", {
       layout: "home",
       title: "Wander"
     });
   });
   // Load Prebuilt Packages Page
   app.get("/packages", function(req, res) {
+    var id = 0;
+    if(req.url.includes('?')) {
+      id = req.url.split('?',2).splice(1,1)[0].split('=',2).splice(1,1)[0];
+    }
     res.render("packages", {
       layout: "main",
-      title: "Packages"
+      title: "Packages",
+      userID: id
     });
   });
   // Load Custom Page Form Page
@@ -37,6 +42,7 @@ module.exports = function(app) {
       title: "Restaurant Finder"
     });
   });
+  // Loads all travel packages displays by category with hbs
   app.get("/booking", function(req, res) {
       db.travel_packages.findAll({}).then((results) => {
         var thrifty = {packages: [], name: 'thrifty'};
@@ -60,14 +66,12 @@ module.exports = function(app) {
         res.render("allbookings", packages);
       });
   });
-  // Load Dynamic Packages Page - need a /:category in the url and update where statment.
+  // Load Dynamic Packages Page
   app.get("/booking/:category", function(req, res) {
     var id = 0;
     if(req.headers.referer.includes('?')) {
       id = req.headers.referer.split('?',2).splice(1,1)[0].split('=',2).splice(1,1)[0];
     }
-    // test = test[0].split('=',2).splice(1,1);
-    // console.log(test);
     db.travel_packages.findAll({
       where: {
       category: req.params.category
@@ -82,7 +86,7 @@ module.exports = function(app) {
       res.render("bookings",packages);
     });
   });
-  // Load Dynamic Packages Page - need a /:category in the url and update where statment.
+  // Load Dynamic Customer Account Page
   app.get("/customer-account/:id", function(req, res) {
     db.customer_accounts.findAll({
       where: {
@@ -111,18 +115,6 @@ module.exports = function(app) {
       title: "Welcome Back Wanderer"
     });
   });
-
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
-  });
-
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
